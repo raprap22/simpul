@@ -16,27 +16,26 @@ https://dummyjson.com/
 
 | Feature | Endpoint |
 |-------|----------|
-| Inbox / Comments | `/comments` |
-| Posts | `/posts` |
-| Users | `/users` |
-| Tasks / Todos | `/todos` |
+| Inbox Detail | `/comments` |
+| List Inbox | `/posts` |
+| Name for List Inbox | `/users` |
+| Tasks | `/todos` |
 
 ---
 
 ## Features
 
 ### Task Management
-- Display list of todos
+- Display list of task
 - Create new tasks
 - Edit task title and due date
 - Mark tasks as completed
 - Delete tasks
-- Optimistic UI updates for better user experience
 
 ---
 
-### Inbox / Messaging
-- View message threads
+### Inbox
+- View message
 - Send new messages
 - Edit sent messages
 - Delete messages
@@ -54,8 +53,6 @@ https://dummyjson.com/
 ---
 
 ## Architecture
-
-The project uses a **clean and scalable architecture**:
 
 ```
 API (DummyJSON)
@@ -75,7 +72,7 @@ UI Components
 - Encapsulate data fetching logic using React Query
 - Manage loading, error, and optimistic update states
 
-Examples:
+Usage:
 - `useTodos`
 - `useInbox`
 
@@ -99,7 +96,6 @@ Examples:
 ## Highlights
 
 - Clean separation of concerns
-- Optimistic UI for better UX
 - Reusable hooks and components
 - Scalable architecture
 - Bonus feature implemented (Reply Inbox)
