@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Introduce
 
-## Getting Started
+A web application built with **React / Next.js** that demonstrates task management and inbox messaging features using a public dummy API.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## API Source
+
+This project uses the **DummyJSON API**:
+
+```
+https://dummyjson.com/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### API Endpoints Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Feature | Endpoint |
+|-------|----------|
+| Inbox / Comments | `/comments` |
+| Posts | `/posts` |
+| Users | `/users` |
+| Tasks / Todos | `/todos` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+### Task Management
+- Display list of todos
+- Create new tasks
+- Edit task title and due date
+- Mark tasks as completed
+- Delete tasks
+- Optimistic UI updates for better user experience
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Inbox / Messaging
+- View message threads
+- Send new messages
+- Edit sent messages
+- Delete messages
+- Message action menu (Edit / Delete / Reply)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Bonus Feature
+**Reply Inbox**
+- Reply to a specific message
+- Reply preview appears above the message input
+- Replied message is shown as a quoted message in the chat bubble
+- Reply preview can be canceled before sending
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Architecture
+
+The project uses a **clean and scalable architecture**:
+
+```
+API (DummyJSON)
+   ↓
+Service Layer
+   ↓
+Custom Hooks
+   ↓
+UI Components
+```
+
+### Service Layer
+- Handles all API communication
+- Responsible for fetching, creating, updating, and deleting data
+
+### Custom Hooks
+- Encapsulate data fetching logic using React Query
+- Manage loading, error, and optimistic update states
+
+Examples:
+- `useTodos`
+- `useInbox`
+
+### Components
+- Focus only on UI rendering
+- Consume data from custom hooks
+- No direct API calls inside components
+
+---
+
+## Tech Stack
+
+- **React / Next.js**
+- **TypeScript**
+- **TanStack React Query**
+- **Tailwind CSS**
+- **DummyJSON API**
+
+---
+
+## Highlights
+
+- Clean separation of concerns
+- Optimistic UI for better UX
+- Reusable hooks and components
+- Scalable architecture
+- Bonus feature implemented (Reply Inbox)
+
+---
